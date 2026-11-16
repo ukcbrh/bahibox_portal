@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BahiBox - Smart Digital Business Tools, Digital Khata Book, Billing & Productivity Web Applications for Modern Enterprises.">
+    <meta name="google-adsense-account" content="ca-pub-6923316799502067">
+    <title>BahiBox — Smart Business & Utility Applications</title>
+
+    <!-- Google AdSense Verification & Auto Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6923316799502067"
+     crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #172554;
+            --brand-navy: #0f2b6b;
+            --brand-green: #16d616;
+            --accent: #2563eb;
+            --bg-main: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .brand-logo svg {
+            height: 44px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: #ffffff !important;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 13px !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2b6b 0%, #1e3a8a 55%, #1d4ed8 100%);
+            color: #ffffff;
+            padding: 72px 20px 80px;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.6px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #dbeafe;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: #ffffff;
+            color: var(--brand-navy);
+            padding: 13px 26px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: transform 0.15s;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 13px 26px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        /* Section Wrapper */
+        .section {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 64px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto 40px;
+        }
+
+        .section-tag {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .section-header h2 {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* Search & Category Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .app-search {
+            padding: 9px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            min-width: 260px;
+            outline: none;
+            background: var(--bg-white);
+        }
+
+        .app-search:focus {
+            border-color: var(--accent);
+        }
+
+        /* Applications Grid */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .app-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(30, 58, 138, 0.09);
+            border-color: #bfdbfe;
+        }
+
+        .app-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border: 1px solid #dbeafe;
+            overflow: hidden;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .badge-live {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .badge-soon {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .app-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .app-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .app-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .app-tag {
+            font-size: 11px;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 3px 9px;
+            border-radius: 6px;
+        }
+
+        .app-launch-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .app-launch-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .app-launch-btn.disabled {
+            background: #e2e8f0;
+            color: #64748b;
+            pointer-events: none;
+        }
+
+        /* Features & About Section */
+        .about-bg {
+            background: var(--bg-white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+        .feature-item h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+
+        .feature-item p {
+            font-size: 12.5px;
+            margin: 0;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #0f2b6b 0%, #2563eb 100%);
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .stat-card h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .stat-card p {
+            font-size: 13px;
+            color: #dbeafe;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 32px;
+        }
+
+        .contact-info-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .contact-info-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 18px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .contact-row strong {
+            display: block;
+            color: var(--text-dark);
+        }
+
+        .contact-form-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 9px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: #050a14;
+            color: #cbd5e1;
+            padding: 48px 20px 24px;
+        }
+
+        .footer-grid {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .footer-brand svg {
+            height: 46px;
+            width: auto;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 13.5px;
+            color: #94a3b8;
+            max-width: 340px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13.5px;
+            cursor: pointer;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            max-width: 1180px;
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* Policy Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.65);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 200;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            max-height: 82vh;
+            overflow-y: auto;
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .modal-box h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .modal-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: #f1f5f9;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 820px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                gap: 16px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 29px;
+            }
+            .about-grid, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation with Tightly Joined BahiBox Light Logo -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="brand-logo" aria-label="BahiBox Home">
+                <svg viewBox="0 0 230 86" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 4 Signal Bars -->
+                    <rect x="6" y="4" width="7.5" height="27" rx="3.75" fill="#00C6FF"/>
+                    <rect x="17" y="10" width="7.5" height="21" rx="3.75" fill="#00A8F3"/>
+                    <rect x="28" y="16" width="7.5" height="15" rx="3.75" fill="#0082E6"/>
+                    <rect x="39" y="21" width="7.5" height="10" rx="3.75" fill="#0052D4"/>
+                    <!-- Green Open Box Frame hugging "Box" tightly -->
+                    <path d="M104 37 L104 26 Q104 20 110 20 L196 20 Q202 20 202 26 L202 74 Q202 80 196 80 L165 80" fill="none" stroke="#16D616" stroke-width="3.4" stroke-linecap="round"/>
+                    <path d="M144 80 L110 80 Q104 80 104 75" fill="none" stroke="#16D616" stroke-width="3.4" stroke-linecap="round"/>
+                    <!-- Single Joined Word "BahiBox" with zero gap -->
+                    <text x="5" y="72" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="45" font-weight="700" letter-spacing="-0.5"><tspan fill="#0F2B6B">Bahi</tspan><tspan fill="#16D616">Box</tspan></text>
+                </svg>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#apps" onclick="closeMobileMenu()">Applications</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+                <li><a href="https://khata.bahibox.com" target="_blank" class="nav-cta">Open Khata App ↗</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-pill">BahiBox Digital Ecosystem</div>
+            <h1>Smart Web & Business Applications Built for Speed</h1>
+            <p>Access lightweight, secure, and cloud-backed digital tools for ledger accounting, billing, inventory, and daily enterprise operations — directly from your browser or Android device.</p>
+            <div class="hero-buttons">
+                <a href="#apps" class="btn-hero-primary">Explore Applications</a>
+                <a href="#contact" class="btn-hero-secondary">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Directory Section -->
+    <section class="section" id="apps">
+        <div class="section-header">
+            <div class="section-tag">Application Suite</div>
+            <h2>Our Digital Applications</h2>
+            <p>Select any application below to launch instantly. All tools are optimized for mobile and desktop browsers with offline-first reliability.</p>
+        </div>
+
+        <div class="filter-bar">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterApps('all', this)">All Apps</button>
+                <button class="filter-btn" onclick="filterApps('finance', this)">Accounting & Billing</button>
+                <button class="filter-btn" onclick="filterApps('operations', this)">Business Operations</button>
+                <button class="filter-btn" onclick="filterApps('utility', this)">Utilities</button>
+            </div>
+            <input type="text" class="app-search" id="appSearchInput" placeholder="Search applications..." oninput="searchApps()">
+        </div>
+
+        <div class="apps-grid" id="appsGrid">
+            <!-- App 1: Digital Khata Book (Live) -->
+            <div class="app-card" data-category="finance" data-name="digital khata book ledger accounting upi qr backup">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">
+                            <img src="https://khata.bahibox.com/favicon.png" alt="Digital Khata Book Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='📒';">
+                        </div>
+                        <span class="status-badge badge-live">● Live Now</span>
+                    </div>
+                    <h3>Digital Khata Book</h3>
+                    <p>Complete customer & supplier ledger management with automatic Google Drive cloud backup, dynamic UPI QR payments, PDF statements, and WhatsApp receipts.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Ledger</span>
+                        <span class="app-tag">Google Drive Sync</span>
+                        <span class="app-tag">UPI QR</span>
+                        <span class="app-tag">PDF Reports</span>
+                    </div>
+                </div>
+                <a href="https://khata.bahibox.com" target="_blank" class="app-launch-btn">Launch Application ↗</a>
+            </div>
+
+            <!-- App 2: Smart POS & Merchant Billing -->
+            <div class="app-card" data-category="finance" data-name="smart pos merchant billing invoice gst receipt">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">🧾</div>
+                        <span class="status-badge badge-soon">Upcoming</span>
+                    </div>
+                    <h3>BahiBox POS & Billing</h3>
+                    <p>Fast retail counter invoicing, barcode item lookup, thermal receipt printing, and instant WhatsApp bill sharing with clickable payment links.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Invoicing</span>
+                        <span class="app-tag">Retail POS</span>
+                        <span class="app-tag">WhatsApp Bills</span>
+                    </div>
+                </div>
+                <a href="#contact" class="app-launch-btn disabled">Coming Soon</a>
+            </div>
+
+            <!-- App 3: Stock & Inventory Manager -->
+            <div class="app-card" data-category="operations" data-name="stock inventory warehouse manager tracker">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">📦</div>
+                        <span class="status-badge badge-soon">Upcoming</span>
+                    </div>
+                    <h3>Stock & Inventory Tracker</h3>
+                    <p>Real-time batch tracking, low-stock alerts, purchase order logs, and multi-unit stock valuation designed for traders and distributors.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Inventory</span>
+                        <span class="app-tag">Stock Alerts</span>
+                        <span class="app-tag">Multi-Unit</span>
+                    </div>
+                </div>
+                <a href="#contact" class="app-launch-btn disabled">Coming Soon</a>
+            </div>
+
+            <!-- App 4: Staff Attendance & Payroll -->
+            <div class="app-card" data-category="operations" data-name="staff attendance payroll salary shift tracker">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">👥</div>
+                        <span class="status-badge badge-soon">Upcoming</span>
+                    </div>
+                    <h3>Staff & Payroll Manager</h3>
+                    <p>Daily shift attendance, overtime hour calculations, advance salary ledger, and automated monthly pay-slip generation for small teams.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Attendance</span>
+                        <span class="app-tag">Payroll</span>
+                        <span class="app-tag">Shift Logs</span>
+                    </div>
+                </div>
+                <a href="#contact" class="app-launch-btn disabled">Coming Soon</a>
+            </div>
+
+            <!-- App 5: Agri & Weighbridge Logbook -->
+            <div class="app-card" data-category="operations" data-name="agri weighbridge crop procurement logbook">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">🌾</div>
+                        <span class="status-badge badge-soon">Upcoming</span>
+                    </div>
+                    <h3>Agri & Procurement Logbook</h3>
+                    <p>Digital weight slips, farmer collection records, rate calculation per quintal, and instant payout tracking for agro-enterprises.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">AgriTech</span>
+                        <span class="app-tag">Weight Slips</span>
+                        <span class="app-tag">Farmer Ledger</span>
+                    </div>
+                </div>
+                <a href="#contact" class="app-launch-btn disabled">Coming Soon</a>
+            </div>
+
+            <!-- App 6: Business Calculators & PDF Tools -->
+            <div class="app-card" data-category="utility" data-name="business calculator emi interest gst pdf utility">
+                <div>
+                    <div class="app-card-top">
+                        <div class="app-icon">🧮</div>
+                        <span class="status-badge badge-soon">Upcoming</span>
+                    </div>
+                    <h3>Business Utility Toolkit</h3>
+                    <p>Instant GST calculator, interest & EMI planner, cash denomination counter, and digital quotation generator in one lightweight workspace.</p>
+                    <div class="app-tags">
+                        <span class="app-tag">Calculators</span>
+                        <span class="app-tag">Quotations</span>
+                        <span class="app-tag">Utilities</span>
+                    </div>
+                </div>
+                <a href="#contact" class="app-launch-btn disabled">Coming Soon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-bg" id="about">
+        <div class="section">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-tag">About BahiBox</div>
+                    <h2>Practical Software Engineered for Everyday Business</h2>
+                    <p>BahiBox is an MSME-registered digital software initiative focused on building fast, clutter-free, and reliable web and mobile applications for Indian merchants, service providers, and enterprises.</p>
+                    <p>Unlike bloated legacy software, every application on BahiBox works smoothly even on low-bandwidth mobile connections, keeps your data under your direct control via personal Google Drive backups, and requires zero technical training.</p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <h4>☁️ User-Owned Cloud Backup</h4>
+                            <p>Automatic synchronization directly to your own Google Drive account.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>⚡ Instant Zero-Install Web Apps</h4>
+                            <p>Open any tool immediately in Chrome or install as an Android app.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🔒 Privacy-First Architecture</h4>
+                            <p>Local-first storage ensures your business records stay private and fast.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📄 Professional PDF & UPI</h4>
+                            <p>Generate clean statements and payment QR codes in one tap.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-box">
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Cloud & Offline Data Reliability</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>&lt; 1s</h3>
+                        <p>Instant Application Load Time</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Accessible Across Mobile & Desktop</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>UPI + PDF</h3>
+                        <p>Built-in Payment & Statement Tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-header">
+            <div class="section-tag">Get In Touch</div>
+            <h2>Contact & Support</h2>
+            <p>Have a question about our applications, need custom business software, or want to share feedback? Reach out to our team.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3>BahiBox Services</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Official software portal developed and maintained by Upendra Kumar Chaudhary.</p>
+
+                <div class="contact-row">
+                    <span>📍</span>
+                    <div>
+                        <strong>Office Location</strong>
+                        Bahraich, Uttar Pradesh, India
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <span>📧</span>
+                    <div>
+                        <strong>Email Support</strong>
+                        ukcbrh@gmail.com
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <span>📞</span>
+                    <div>
+                        <strong>Phone / WhatsApp</strong>
+                        +91 9044474494
+                    </div>
+                </div>
+
+                <div class="contact-row">
+                    <span>🌐</span>
+                    <div>
+                        <strong>Web Portal</strong>
+                        https://bahibox.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <form onsubmit="submitContactForm(event)">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="contactName" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email or Mobile Number *</label>
+                        <input type="text" id="contactEmail" class="form-control" placeholder="Enter email or phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Application / Subject</label>
+                        <select id="contactSubject" class="form-control">
+                            <option value="Digital Khata Book Support">Digital Khata Book Support</option>
+                            <option value="New App Request">Request a New Business App</option>
+                            <option value="Partnership / General Inquiry">Partnership / General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea id="contactMessage" class="form-control" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message via WhatsApp / Email</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Tightly Joined BahiBox Dark Logo -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <svg viewBox="0 0 230 86" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 4 Signal Bars -->
+                    <rect x="6" y="4" width="7.5" height="27" rx="3.75" fill="#00C6FF"/>
+                    <rect x="17" y="10" width="7.5" height="21" rx="3.75" fill="#00A8F3"/>
+                    <rect x="28" y="16" width="7.5" height="15" rx="3.75" fill="#0082E6"/>
+                    <rect x="39" y="21" width="7.5" height="10" rx="3.75" fill="#0052D4"/>
+                    <!-- Green Open Box Frame hugging "Box" tightly -->
+                    <path d="M104 37 L104 26 Q104 20 110 20 L196 20 Q202 20 202 26 L202 74 Q202 80 196 80 L165 80" fill="none" stroke="#16D616" stroke-width="3.4" stroke-linecap="round"/>
+                    <path d="M144 80 L110 80 Q104 80 104 75" fill="none" stroke="#16D616" stroke-width="3.4" stroke-linecap="round"/>
+                    <!-- Single Joined Word "BahiBox" with zero gap -->
+                    <text x="5" y="72" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="45" font-weight="700" letter-spacing="-0.5"><tspan fill="#FFFFFF">Bahi</tspan><tspan fill="#16D616">Box</tspan></text>
+                </svg>
+                <p>Building simple, fast, and dependable digital business tools for modern merchants and enterprises.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#apps">Applications</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal & Policies</h4>
+                <ul>
+                    <li><a onclick="openPolicyModal('privacy')">Privacy Policy</a></li>
+                    <li><a onclick="openPolicyModal('terms')">Terms & Conditions</a></li>
+                    <li><a onclick="openPolicyModal('disclaimer')">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 BahiBox Services. All rights reserved.</div>
+            <div>Created by Upendra K Chaudhary</div>
+        </div>
+    </footer>
+
+    <!-- Legal Policy Modal (Essential for AdSense Approval) -->
+    <div class="modal-backdrop" id="policyModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closePolicyModal()">×</button>
+            <h3 id="policyTitle">Privacy Policy</h3>
+            <div id="policyBody"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('show');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('navLinks').classList.remove('show');
+        }
+
+        let activeCategory = 'all';
+
+        function filterApps(category, btnEl) {
+            activeCategory = category;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+            applyAppFilters();
+        }
+
+        function searchApps() {
+            applyAppFilters();
+        }
+
+        function applyAppFilters() {
+            const query = (document.getElementById('appSearchInput').value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.app-card');
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category');
+                const keywords = (card.getAttribute('data-name') || '') + ' ' + card.innerText.toLowerCase();
+                const matchesCat = activeCategory === 'all' || cat === activeCategory;
+                const matchesSearch = !query || keywords.includes(query);
+                card.style.display = (matchesCat && matchesSearch) ? 'flex' : 'none';
+            });
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const contact = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value.trim();
+
+            const waText = `*BahiBox Portal Inquiry*\n*Name:* ${name}\n*Contact:* ${contact}\n*Subject:* ${subject}\n*Message:* ${message}`;
+            window.open(`https://wa.me/919044474494?text=${encodeURIComponent(waText)}`, '_blank');
+        }
+
+        function openPolicyModal(type) {
+            const titleEl = document.getElementById('policyTitle');
+            const bodyEl = document.getElementById('policyBody');
+
+            if (type === 'privacy') {
+                titleEl.innerText = 'Privacy Policy';
+                bodyEl.innerHTML = `
+                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <p>At BahiBox (bahibox.com), we respect your privacy and are committed to protecting user data. Our web applications store business entries locally on your device and, when explicitly enabled by you, back them up directly to your own personal Google Drive account.</p>
+                    <p><strong>Google Drive API Usage:</strong> Applications such as Digital Khata Book request only the limited <code>drive.file</code> permission solely to create and update your personal backup file. We do not sell, rent, or read your private accounting records on external servers.</p>
+                    <p><strong>Advertising & Cookies:</strong> We use Google AdSense to display advertisements on our web portal. Google may use cookies to serve relevant ads based on prior visits. Users may opt out of personalized advertising by visiting Google Ads Settings.</p>
+                `;
+            } else if (type === 'terms') {
+                titleEl.innerText = 'Terms & Conditions';
+                bodyEl.innerHTML = `
+                    <p>By accessing and using BahiBox (bahibox.com) and its hosted web applications, you agree to comply with these Terms & Conditions.</p>
+                    <p><strong>Use of Software:</strong> Our tools are provided to assist businesses with digital recordkeeping, invoicing, and calculations. Users are responsible for maintaining regular backups of their records.</p>
+                    <p><strong>Intellectual Property:</strong> All interface designs, source code, logos, and brand assets on BahiBox are the intellectual property of BahiBox Services.</p>
+                `;
+            } else {
+                titleEl.innerText = 'Disclaimer';
+                bodyEl.innerHTML = `
+                    <p>The applications and calculators hosted on BahiBox are designed for general business productivity and recordkeeping purposes. While we strive for complete accuracy, users should verify tax and financial figures with a qualified professional where required by law.</p>
+                `;
+            }
+
+            document.getElementById('policyModal').classList.add('open');
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModal').classList.remove('open');
+        }
+    </script>
+</body>
+</html>
